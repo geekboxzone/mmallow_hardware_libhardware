@@ -39,6 +39,12 @@ __BEGIN_DECLS
 #define HWC_DEVICE_API_VERSION_1_4  HARDWARE_DEVICE_API_VERSION_2(1, 4, HWC_HEADER_VERSION)
 #define HWC_DEVICE_API_VERSION_1_5  HARDWARE_DEVICE_API_VERSION_2(1, 5, HWC_HEADER_VERSION)
 
+#define HWC_BLENDING_DIM		0x0805
+#define HWC_BLENDING_CLEAR_HOLE          0x0806
+
+#define HWC_Layer_DEBUG
+#define LayerNameLength 60
+
 enum {
     /* hwc_composer_device_t::set failed in EGL */
     HWC_EGL_ERROR = -1
@@ -116,7 +122,13 @@ enum {
        cursor overlay hardware. hwcomposer will also all async position updates
        of this layer outside of the normal prepare()/set() loop. Added in
        HWC_DEVICE_API_VERSION_1_4. */
-    HWC_CURSOR_OVERLAY =  5
+    HWC_CURSOR_OVERLAY =  5,
+    HWC_TOWIN0,
+    HWC_TOWIN1,
+    HWC_LCDC,
+    HWC_NODRAW,
+    HWC_MIX,
+    HWC_MIX_V2
  };
 /*
  * hwc_layer_t::blending values
