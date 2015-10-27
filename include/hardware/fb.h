@@ -45,33 +45,33 @@ typedef struct framebuffer_device_t {
     struct hw_device_t common;
 
     /* flags describing some attributes of the framebuffer */
-    uint32_t  flags;
+    const uint32_t  flags;
 
     /* dimensions of the framebuffer in pixels */
-    uint32_t  width;
-    uint32_t  height;
+    const uint32_t  width;
+    const uint32_t  height;
 
     /* frambuffer stride in pixels */
-    int       stride;
+    const int       stride;
 
     /* framebuffer pixel format */
-    int       format;
+    const int       format;
 
     /* resolution of the framebuffer's display panel in pixel per inch*/
-    float     xdpi;
-    float     ydpi;
+    const float     xdpi;
+    const float     ydpi;
 
     /* framebuffer's display panel refresh rate in frames per second */
-    float     fps;
+    const float     fps;
 
     /* min swap interval supported by this framebuffer */
-    int       minSwapInterval;
+    const int       minSwapInterval;
 
     /* max swap interval supported by this framebuffer */
-    int       maxSwapInterval;
+    const int       maxSwapInterval;
 
     /* Number of framebuffers supported*/
-    int       numFramebuffers;
+    const int       numFramebuffers;
 
     int reserved[7];
 
