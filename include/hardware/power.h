@@ -46,7 +46,9 @@ typedef enum {
      */
     POWER_HINT_VIDEO_ENCODE = 0x00000003,
     POWER_HINT_VIDEO_DECODE = 0x00000004,
-    POWER_HINT_LOW_POWER = 0x00000005
+    POWER_HINT_LOW_POWER = 0x00000005,
+    POWER_HINT_CPU_BOOST = 0x00000006,
+    POWER_HINT_PERFORMANCE_MODE = 0x00000007
 } power_hint_t;
 
 typedef enum {
@@ -116,8 +118,7 @@ typedef struct power_module {
      *     User is interacting with the device, for example, touchscreen
      *     events are incoming.  CPU and GPU load may be expected soon,
      *     and it may be appropriate to raise speeds of CPU, memory bus,
-     *     etc.  The data parameter is the estimated length of the interaction
-     *     in milliseconds, or 0 if unknown.
+     *     etc.  The data parameter is unused.
      *
      * POWER_HINT_LOW_POWER
      *
